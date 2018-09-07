@@ -13,13 +13,6 @@ public class OrderUtils {
 
     private final static int RANDOM_LENGTH = 32;
 
-    //商户API密钥
-    private final static String SECRET_KEY = "WECHATPAY201807231832qazwsxedcrf";
-    //小程序APPID
-    final static String APPID = "wx84bf6ecf29b6b796";
-    //商户号
-    final static String MCHID = "1226570502";
-
     /**
      * 获取32位内的随机字符串 nonce_str
      */
@@ -58,8 +51,8 @@ public class OrderUtils {
         //对参数按照 key=value 的格式，并按 key 的 ASCII 字典排序组合成字符串
         String kvString = mapToKeyValue();
         //拼接API密钥
-        String signTemp = kvString + "&key=" + SECRET_KEY;
-        Log.info(TAG, "MD5加密前 源字符串 --> " + signTemp );
+        String signTemp = kvString + "&key=" + Config.SECRET_KEY;
+        Log.info(TAG, "MD5加密前 源字符串 --> " + signTemp);
         String sign = MD5(signTemp);
         Log.info(TAG, "MD5签名 --> " + sign);
         return sign;
@@ -146,9 +139,10 @@ public class OrderUtils {
      * 获取当前时间戳 精确到秒
      * @return 秒级时间戳字符串
      */
-    public static String getTimeStamp(){
+    static String getTimeStamp(){
         return String.valueOf(System.currentTimeMillis() / 1000);
     }
+
     public static void main(String[] arg) {
 //        paramKV.put("body", "微信支付测试");
 //        paramKV.put("appid", "ASJIQBBHA1231");

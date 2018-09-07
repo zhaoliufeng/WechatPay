@@ -22,5 +22,6 @@
     <orderEntry type="library" exported="" name="lib" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.5.32" level="application_server_libraries" />
     <orderEntry type="library" name="dom4j-2.1.1" level="project" />
+    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
   </component>
 </module>

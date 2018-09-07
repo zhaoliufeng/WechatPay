@@ -1,4 +1,3 @@
-import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import utils.*;
 
@@ -49,7 +48,7 @@ public class WeChatPayServlet extends HttpServlet {
         Log.info(TAG, "来自 ip --> " + ipAddresses + " 的访问");
         ParamUtil.getInstance().request(req).setPrepayParams(OrderUtils.paramKV);
         String requestParams = OrderUtils.getPrepayParams();
-        String backXml = NetUtils.getRemotePortData(NetUtils.PREPAY_API, requestParams);
+        String backXml = NetUtils.getRemotePortData(Config.PREPAY_API, requestParams);
         Log.info(TAG, "收到统一下单接口返回的数据 --> " + backXml);
         PrepayBean prepayBean = XmlUtil.getInstance().getPrepayBean(backXml);
 

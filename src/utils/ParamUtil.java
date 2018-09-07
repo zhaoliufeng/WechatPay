@@ -64,12 +64,12 @@ public class ParamUtil {
         map.put(FEE, getStringParams(FEE));
         map.put(OPENID, getStringParams(OPENID));
 
-        map.put(APPID, OrderUtils.APPID);
-        map.put(MCHID, OrderUtils.MCHID);
+        map.put(APPID, Config.APPID);
+        map.put(MCHID, Config.MCHID);
         map.put(NONCESTR, OrderUtils.getRandomString());
         map.put(OUTTRADENO, OrderUtils.getOrderNum());
         map.put(IP, getIP());
-        map.put(NOTIFYURL, NetUtils.NOTIFYURL);
+        map.put(NOTIFYURL, Config.NOTIFYURL);
         map.put(TRADETYPE, "JSAPI");
         Log.info(TAG, "统一下单接口参数");
         for (String key : map.keySet()) {
@@ -86,7 +86,7 @@ public class ParamUtil {
      */
     public void setPaySignParams(Map<String, String> map, String prepayId, String timStamp, String nonceStr){
         map.clear();
-        map.put(PAYSIGN_APPID, OrderUtils.APPID);
+        map.put(PAYSIGN_APPID, Config.APPID);
         map.put(PAYSIGN_TIMESTAMP, timStamp);
         map.put(PAYSIGN_NONCESTR, nonceStr);
         map.put(PAYSIGN_PACKAGE, "prepay_id=" + prepayId);

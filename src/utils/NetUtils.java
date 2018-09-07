@@ -10,11 +10,6 @@ import java.net.URL;
  * 获取 openId session_key
  */
 public class NetUtils {
-    //统一下单服务地址
-    public final static String PREPAY_API = "https://api.mch.weixin.qq.com/pay/unifiedorder";
-
-    //支付结果通知地址
-    final static String NOTIFYURL = "http://fqgrsp.natappfree.cc/wechatpay/wxpaycall";
 
     /**
      * @param urls 接口地址
